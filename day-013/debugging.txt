@@ -1,0 +1,198 @@
+
+# Debugging
+
+## 1. Describe the Problem
+- What is the for-loop doing?
+- When is the function meant to print "You got it?"
+- What are your assumptions about it?
+
+```python
+# Describe Problem
+def my_function():
+  for i in range(1, 20): # ➡️ range(1, 21)
+    if i == 20:
+      print("You got it")
+my_function()
+```
+
+## 2. Reproduce the Bug
+- If you encounter it once, but you don't encounter it the next time that becomes a really difficult bug to fix;
+
+```python
+# Reproduce the Bug
+from random import randint
+dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
+dice_num = randint(1, 6) # ➡️ randint(0, 5)
+print(dice_imgs[dice_num])
+```
+
+- Occasionally you'll get an ==error==:
+
+```python
+Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    print(dice_imgs[dice_num])
+IndexError: list index out of range
+```
+
+## 3. Play Computer
+- The skill of pretending to be a computer reading through your code and imagining what you going to do each time is really useful, especially when you're debugging;
+
+```python
+# Play Computer
+year = int(input("What's your year of birth?"))
+if year > 1980 and year < 1994:
+  print("You are a millenial.")
+elif year > 1994: # ➡️ year >= 1994
+  print("You are a Gen Z.")
+```
+
+## 4. Fix the errors
+- When the editor's giving you an error or when the console's giving you an error, fix the errors before you continue;
+
+```python
+# Fix the Errors
+age = input("How old are you? ")
+if age > 18:
+    print("You can drive at age {age}.") # ➡️ indented
+```
+
+- That will give us:
+
+```python
+How old are you? 20
+Traceback (most recent call last):
+  File "main.py", line 27, in <module>
+    if age > 18:
+TypeError: '>' not supported between instances of 'str' and 'int'
+```
+
+- Then:
+
+```python
+# Fix the Errors
+age = input("How old are you? ")
+if age > 18:
+    print("You can drive at age {age}.") # ➡️ f-string
+```
+
+## 5. Print is Your Friend
+- Use it as tool to solve your questions about your code;
+
+```python
+#Print is Your Friend
+pages = 0
+word_per_page = 0
+pages = int(input("Number of pages: "))
+# word_per_page == int(input("Number of words per page: "))
+word_per_page = int(input("Number of words per page: ")) # ➡️ =
+total_words = pages * word_per_page
+print(f"pages: {pages}") # ➡️ print your variables
+print(f"words per page: {word_per_page}") # ➡️ print your variables
+print(total_words)
+```
+
+## 6. Use a Debugger
+- We've already used www.pythontutor.com and also Thonny editor;
+
+```python
+#Use a Debugger
+def mutate(a_list):
+  b_list = []
+  for item in a_list:
+    new_item = item * 2
+#b_list.append(new_item)
+    b_list.append(new_item) # ➡️ include it in the for loop
+  print(b_list)
+
+mutate([1,2,3,5,8,13])
+```
+
+- With this debugger, we've managed to see line by line what the computer is doing and solve the problem;
+- We can actually make this processe even simpler by using a ==breakpoint==;
+
+## Final Tips for Debugging
+
+### 7. Take a Break
+### 8. Ask a Friend
+### 9. Run Often
+### 10. Ask StackOverflow
+
+# Exercises
+
+## Debug Odd or Even Exercise
+
+-   Read this the code in main.py
+-   Spot the problems 🐞.
+-   Modify the code to fix the program.
+
+Fix the code so that it works and passes the tests when you submit
+
+```python
+number = int(input("Which number do you want to check? "))
+
+#if number % 2 = 0:
+if number % 2 == 0: # ➡️ ==
+  print("This is an even number.")
+else:
+  print("This is an odd number.")
+```
+
+## Debug Leap Year Exercise
+
+-   Read this the code in main.py
+-   Spot the problems 🐞.
+-   Modify the code to fix the program.
+-   No shortcuts - don't copy-paste to replace the code entirely with a working solution.
+
+Fix the code so that it works and when you hit submit it should pass all the tests.
+
+```python
+year = int(input("Which year do you want to check? ")) # ➡️ int()
+
+if year % 4 == 0:
+  if year % 100 == 0:
+    if year % 400 == 0:
+      print("Leap year.")
+    else:
+      print("Not leap year.")
+  else:
+    print("Leap year.")
+else:
+  print("Not leap year.")
+```
+
+## Debug Fizz Buzz Exercise
+
+-   Read this the code in main.py
+-   Spot the problems 🐞.
+-   Modify the code to fix the program.
+-   No shortcuts - don't copy-paste to replace the code entirely with a working solution.
+
+The code needs to print the solution to the FizzBuzz game.
+
+> Your program should print each number from 1 to 100 in turn.
+>
+> When the number is divisible by 3 then instead of printing the number it should print "Fizz".
+>
+> When the number is divisible by 5, then instead of printing the number it should print "Buzz".
+>
+>   And if the number is divisible by both 3 and 5 e.g. 15 then instead of the number it should print "FizzBuzz"
+
+```python
+for number in range(1, 101):
+  # if number % 3 == 0 or number % 5 == 0: # ➡️ and
+  if number % 3 == 0 and number % 5 == 0: # ➡️ and
+    print("FizzBuzz")
+  # if number % 3 == 0:
+  elif number % 3 == 0: # ➡️ elif
+    print("Fizz")
+  # if number % 5 == 0:
+  elif number % 5 == 0: # ➡️ elif
+    print("Buzz")
+  else:
+    print(number)
+```
+
+---
+#Python #100d-bootcamp
