@@ -28,4 +28,5 @@ Starting from : Jan 04, 2023
 - Day 015 &rarr; Started using PyCharm and applying previous knowledge to build a Coffee Machine [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-015)
 - Day 016 &rarr; Oriented Object Programming + moduling the Coffee Machine from the previous class [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-016)
 - Day 017 &rarr; Benefits of OOP + working with classes, attributes, and methods [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-017)
+- Day 018 &rarr; Turtle graphics, Tuples, and different ways to import Modules [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-018)
 
