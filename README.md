@@ -31,4 +31,5 @@ Starting from : Jan 04, 2023
 - Day 018 &rarr; Turtle graphics, Tuples, and different ways to import Modules [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-018)
 - Day 019 &rarr; Used Event Listeners and created Multiple Instances of Objects with For loops [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-019)
 - Day 020 &rarr; Mainly working with classes, objects, and event listeners to creat Snake Game pt.1 [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-020)
+- Day 021 &rarr; Learning about inheritance in OOP and slicing tuples and lists with Snake Game pt.2 [[LINK]](https://github.com/vsommah/python-100d-bootcamp/tree/main/day-021)
 
